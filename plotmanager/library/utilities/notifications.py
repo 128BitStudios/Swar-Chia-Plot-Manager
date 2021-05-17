@@ -1,9 +1,15 @@
+import websockets
 import discord_notify
 import playsound
 import pushover
 
 
 def _send_notifications(title, body, settings):
+    if settings.get('notify_websocket') is True:
+        # notifier = 
+        # notifier = discord_notify.Notifier(settings.get('discord_webhook_url'))
+        print('websockets enabled')
+
     if settings.get('notify_discord') is True:
         notifier = discord_notify.Notifier(settings.get('discord_webhook_url'))
         notifier.send(body, print_message=False)
