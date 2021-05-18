@@ -44,6 +44,11 @@ view:
 notifications:
   # These are different settings in order to notified when the plot manager starts and when a plot has been completed.
 
+  # BROADCAST
+  notify_broadcast: false
+  notify_broadcast_interval: 15
+  broadcast_webhook_url: http://localhost:3000/webhook
+
   # DISCORD
   notify_discord: false
   discord_webhook_url: https://discord.com/api/webhooks/0000000000000000/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

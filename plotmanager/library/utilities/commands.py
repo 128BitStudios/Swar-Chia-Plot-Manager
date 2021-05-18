@@ -126,6 +126,19 @@ def view():
             exit()
 
 
+def broadcast():
+    chia_location, log_directory, config_jobs, manager_check_interval, max_concurrent, progress_settings, \
+        notification_settings, debug_level, view_settings = get_config_info()
+    broadcast_check_interval = notification_settings['notify_broadcast_interval']
+    while True:
+        try:
+            print("1")
+            time.sleep(broadcast_check_interval)
+        except KeyboardInterrupt:
+            print("Stopped broadcasting.")
+            exit()
+
+
 def analyze_logs():
     chia_location, log_directory, jobs, manager_check_interval, max_concurrent, progress_settings, \
        notification_settings, debug_level, view_settings = get_config_info()

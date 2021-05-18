@@ -15,6 +15,9 @@ def _send_notifications(title, body, settings):
         client = pushover.Client(settings.get('pushover_user_key'), api_token=settings.get('pushover_api_key'))
         client.send_message(body, title=title)
 
+def send_broadcast(title, body, settings):
+    notifier = discord_notify.Notifier(settings.get('broadcast_webhook_url'))
+    notifier.send(body, print_message=False)
 
 def send_notifications(title, body, settings):
     try:

@@ -1,7 +1,7 @@
 import argparse
 
 from plotmanager.library.utilities.exceptions import InvalidArgumentException
-from plotmanager.library.utilities.commands import start_manager, stop_manager, view, analyze_logs
+from plotmanager.library.utilities.commands import start_manager, stop_manager, view, broadcast, analyze_logs
 
 
 parser = argparse.ArgumentParser(description='This is the central manager for Swar\'s Chia Plot Manager.')
@@ -34,6 +34,8 @@ elif args.action == 'stop':
     stop_manager()
 elif args.action == 'view':
     view()
+elif args.action == 'broadcast':
+    broadcast()
 elif args.action == 'analyze_logs':
     analyze_logs()
 else:
